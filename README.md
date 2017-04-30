@@ -1,4 +1,5 @@
 # Firebird
+[![Build Status](https://travis-ci.org/infinitered/firebird.svg?branch=master)](https://travis-ci.org/infinitered/firebird)
 
 [Infinite Red's](https://infinite.red) boilerplate for new Phoenix projects, using Dave Thomas's excellent [Elixir project generator](https://pragdave.me/blog/2017/04/18/elixir-project-generator.html).
 
