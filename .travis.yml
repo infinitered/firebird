@@ -1,0 +1,20 @@
+language: elixir
+elixir:
+  - 1.4.2
+otp_release:
+  - 19.2
+sudo: false
+before_install:
+  - nvm install 7
+  - nvm use 7
+  - npm i --global yarn
+cache:
+  yarn: true
+before_script:
+  - mix local.hex --force
+  - mix archive.install hex mix_generator --force
+  - mix archive.install hex mix_templates --force
+  - mix template.install .
+  - mix gen firebird travis
+script:
+  - cd travis && bin/setup
