@@ -1,6 +1,12 @@
 # Firebird
 
-[Infinite Red's](https://infinite.red) boilerplate for new Phoenix projects.
+[Infinite Red's](https://infinite.red) boilerplate for new Phoenix projects, using Dave Thomas's excellent [Elixir project generator](https://pragdave.me/blog/2017/04/18/elixir-project-generator.html).
+
+## Why Firebird?
+
+While Phoenix comes with some good defaults out of the box, if you're building a non-trivial application you'll need to make some different choices. Infinite Red ships Elixir/Phoenix web applications and websites regularly and we've found that using Yarn, Webpack, and some other tooling makes our lives easier.
+
+We plan to keep Firebird up to date and a leading boilerplate for Phoenix applications. Star (and watch, if you want) this repo to show support and keep tabs on our progress!
 
 ## Highlights
 
@@ -29,3 +35,6 @@ $ cd <your-project-name>
 $ bin/setup
 ```
 
+## License
+
+The MIT License (MIT), copyright (c) 2017 Infinite Red, Inc.
