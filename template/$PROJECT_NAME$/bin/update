@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Update Script
+#
+# This script is intended to help keep your local dependencies up to date after
+# merging branches or pulling down new changes. This is particularly useful for
+# front-end developers working on the app, who may not understand all the
+# dependency management on the backend.
+
+echo "Ensuring your dependencies and DB schema are up to date..."
+
+# Get any new Mix dependencies
+mix deps.get
+
+# Get any new Node.js dependencies
+cd assets/ && {
+  yarn install;
+  cd -;
+}
+
+# Run any new database migrations
+mix ecto.migrate
+
+echo "Finished! You should be up to date now."

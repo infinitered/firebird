@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# This script is run on Heroku to compile the assets.
+# It is necessary because we need the sass gem installed in order
+# to compile sass files. Otherwise, we could use the default
+# buildpack script.
+#
+# See phoenix_static_buildpack.config for a little more context.
+
+cd $assets_dir
+MIX_ENV=prod ./node_modules/webpack/bin/webpack.js --progress --color;
+
+cd ../
+mix "${phoenix_ex}.digest"
+
+# We don't need the asset files after compile. This helps keep
+# the heroku slug size down.
+rm -rf $assets_dir
