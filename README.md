@@ -22,6 +22,8 @@ We plan to keep Firebird up to date and a leading boilerplate for Phoenix applic
 
 ## Install
 
+_Note that Firebird requires Elixir 1.4.0+._
+
 ```
 $ mix archive.install hex mix_generator
 $ mix archive.install hex mix_templates
@@ -31,8 +33,8 @@ $ mix template.install github infinitered/firebird
 ## Use
 
 ```
-$ mix gen firebird <your-project-name>
-$ cd <your-project-name>
+$ mix gen firebird <your_project_name>
+$ cd <your_project_name>
 $ bin/setup
 ```
 
