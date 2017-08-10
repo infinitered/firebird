@@ -1,5 +1,4 @@
 {
-  "repository": {},
   "dependencies": {
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html"
@@ -22,6 +21,9 @@
     "webpack": "^2.4.1",
     "phantomjs-prebuilt": "^2.1.7"
   },
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {},
   "scripts": {
     "test": "standard && ./node_modules/webpack/bin/webpack.js",
     "compile": "webpack -p"

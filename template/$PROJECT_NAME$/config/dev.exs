@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :<%= @project_name %>, <%= @project_name_camel_case %>.Web.Endpoint,
+config :<%= @project_name %>, <%= @project_name_camel_case %>Web.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -31,13 +31,13 @@ config :<%= @project_name %>, <%= @project_name_camel_case %>.Web.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :<%= @project_name %>, <%= @project_name_camel_case %>.Web.Endpoint,
+config :<%= @project_name %>, <%= @project_name_camel_case %>Web.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/<%= @project_name %>/web/views/.*(ex)$},
-      ~r{lib/<%= @project_name %>/web/templates/.*(eex|slim|slime)$}
+      ~r{lib/<%= @project_name %>_web/views/.*(ex)$},
+      ~r{lib/<%= @project_name %>_web/templates/.*(eex|slim|slime)$}
     ]
   ]
 
@@ -58,4 +58,3 @@ config :<%= @project_name %>, <%= @project_name_camel_case %>.Repo,
 # Configure mailer for local previews
 config :<%= @project_name %>, <%= @project_name_camel_case %>.Mailer,
   adapter: Swoosh.Adapters.Local
-

@@ -1,7 +1,7 @@
-defmodule <%= @project_name_camel_case %>.Web.Endpoint do
+defmodule <%= @project_name_camel_case %>Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :<%= @project_name %>
 
-  socket "/socket", <%= @project_name_camel_case %>.Web.UserSocket
+  socket "/socket", <%= @project_name_camel_case %>Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -36,28 +36,22 @@ defmodule <%= @project_name_camel_case %>.Web.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_<%= @project_name %>_key",
-    signing_salt: "iO7xCAa+"
+    signing_salt: "EKKB12hr"
 
-  plug <%= @project_name_camel_case %>.Web.Router
+  plug <%= @project_name_camel_case %>Web.Router
 
   @doc """
-  Dynamically loads configuration from the system environment
-  on startup.
+  Callback invoked for dynamically configuring the endpoint.
 
-  It receives the endpoint configuration from the config files
-  and must return the updated configuration.
+  It receives the endpoint configuration and checks if
+  configuration should be loaded from the system environment.
   """
-  def load_from_system_env(config) do
-    port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
-    host = System.get_env("HOST") || config.url[:host] || raise "expected the HOST environment variable to be set"
-    secret_key_base = System.get_env("SECRET_KEY_BASE") || config.secret_key_base || raise "expected the SECRET_KEY_BASE environment variable to be set"
-
-    config =
-      config
-      |> Keyword.put(:http, [:inet6, port: port])
-      |> Keyword.put(:url, [host: host, port: port])
-      |> Keyword.put(:secret_key_base, secret_key_base)
-
-    {:ok, config}
+  def init(_key, config) do
+    if config[:load_from_system_env] do
+      port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+    else
+      {:ok, config}
+    end
   end
 end

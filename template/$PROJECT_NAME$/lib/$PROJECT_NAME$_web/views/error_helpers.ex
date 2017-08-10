@@ -1,4 +1,4 @@
-defmodule <%= @project_name_camel_case %>.Web.ErrorHelpers do
+defmodule <%= @project_name_camel_case %>Web.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule <%= @project_name_camel_case %>.Web.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(<%= @project_name_camel_case %>.Web.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(<%= @project_name_camel_case %>Web.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(<%= @project_name_camel_case %>.Web.Gettext, "errors", msg, opts)
+      Gettext.dgettext(<%= @project_name_camel_case %>Web.Gettext, "errors", msg, opts)
     end
   end
 end

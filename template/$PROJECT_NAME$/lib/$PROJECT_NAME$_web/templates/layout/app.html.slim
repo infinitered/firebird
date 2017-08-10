@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+
+    title <%= @project_name_camel_case %>
+
+    link rel="stylesheet" href="#{static_url(@conn, "/css/app.css")}"
+
+  body
+    main role="main"
+      = render @view_module, @view_template, assigns
+
+  script src="#{static_path(@conn, "/js/app.js")}"

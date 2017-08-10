@@ -1,5 +1,5 @@
-defmodule <%= @project_name_camel_case %>.Web.Router do
-  use <%= @project_name_camel_case %>.Web, :router
+defmodule <%= @project_name_camel_case %>Web.Router do
+  use <%= @project_name_camel_case %>Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,17 +13,17 @@ defmodule <%= @project_name_camel_case %>.Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", <%= @project_name_camel_case %>.Web do
+  scope "/", <%= @project_name_camel_case %>Web do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", <%= @project_name_camel_case %>.Web do
+  # scope "/api", <%= @project_name_camel_case %>Web do
   #   pipe_through :api
   # end
-  
+
   if Mix.env == :dev do
     scope "/dev" do
       pipe_through [:browser]
