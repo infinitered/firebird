@@ -1,34 +1,35 @@
-defmodule <%= @project_name_camel_case %>.Web do
+defmodule <%= @project_name_camel_case %>Web do
   @moduledoc """
-  A module that keeps using definitions for controllers,
-  views and so on.
+  The entrypoint for defining your web interface, such
+  as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use <%= @project_name_camel_case %>.Web, :controller
-      use <%= @project_name_camel_case %>.Web, :view
+      use <%= @project_name_camel_case %>Web, :controller
+      use <%= @project_name_camel_case %>Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
   on imports, uses and aliases.
 
   Do NOT define functions inside the quoted expressions
-  below.
+  below. Instead, define any helper function in modules
+  and import those modules here.
   """
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: <%= @project_name_camel_case %>.Web
+      use Phoenix.Controller, namespace: <%= @project_name_camel_case %>Web
       import Plug.Conn
-      import <%= @project_name_camel_case %>.Web.Router.Helpers
-      import <%= @project_name_camel_case %>.Web.Gettext
+      import <%= @project_name_camel_case %>Web.Router.Helpers
+      import <%= @project_name_camel_case %>Web.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/<%= @project_name %>/web/templates",
-                        namespace: <%= @project_name_camel_case %>.Web
+      use Phoenix.View, root: "lib/<%= @project_name %>_web/templates",
+                        namespace: <%= @project_name_camel_case %>Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -36,9 +37,9 @@ defmodule <%= @project_name_camel_case %>.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import <%= @project_name_camel_case %>.Web.Router.Helpers
-      import <%= @project_name_camel_case %>.Web.ErrorHelpers
-      import <%= @project_name_camel_case %>.Web.Gettext
+      import <%= @project_name_camel_case %>Web.Router.Helpers
+      import <%= @project_name_camel_case %>Web.ErrorHelpers
+      import <%= @project_name_camel_case %>Web.Gettext
     end
   end
 
@@ -53,7 +54,7 @@ defmodule <%= @project_name_camel_case %>.Web do
   def channel do
     quote do
       use Phoenix.Channel
-      import <%= @project_name_camel_case %>.Web.Gettext
+      import <%= @project_name_camel_case %>Web.Gettext
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule <%= @project_name_camel_case %>.Web.ConnCase do
+defmodule <%= @project_name_camel_case %>Web.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,10 +19,10 @@ defmodule <%= @project_name_camel_case %>.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import <%= @project_name_camel_case %>.Web.Router.Helpers
+      import <%= @project_name_camel_case %>Web.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint <%= @project_name_camel_case %>.Web.Endpoint
+      @endpoint <%= @project_name_camel_case %>Web.Endpoint
     end
   end
 

@@ -1,5 +1,5 @@
-defmodule <%= @project_name_camel_case %>.Web.ErrorView do
-  use <%= @project_name_camel_case %>.Web, :view
+defmodule <%= @project_name_camel_case %>Web.ErrorView do
+  use <%= @project_name_camel_case %>Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

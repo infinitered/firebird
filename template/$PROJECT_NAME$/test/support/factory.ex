@@ -3,13 +3,13 @@ defmodule <%= @project_name_camel_case %>.Factory do
   Build and insert test data.
 
   ## Examples
-  
+
       Factory.build(:user)
       # => %<%= @project_name_camel_case %>.User{name: "John Smith"}
 
       Factory.build(:user, name: "Jane Smith")
       # => %<%= @project_name_camel_case %>.User{name: "Jane Smith"}
-      
+
       Factory.insert!(:user, name: "Jane Smith")
       # => %<%= @project_name_camel_case %>.User{name: "Jane Smith"}
   """
@@ -24,12 +24,12 @@ defmodule <%= @project_name_camel_case %>.Factory do
   def build(_factory_name) do
     # return struct
   end
-  
+
   @doc """
   Build a schema struct with custom attributes.
 
   ## Example
-  
+
   Suppose you had a `build/1` factory for users:
 
       def build(:user) do
@@ -51,7 +51,7 @@ defmodule <%= @project_name_camel_case %>.Factory do
   Builds and inserts a factory.
 
   ## Example
-  
+
   Suppose you had a `build/1` factory for users:
 
       def build(:user) do

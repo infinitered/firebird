@@ -1,5 +1,5 @@
-defmodule <%= @project_name_camel_case %>.Web.PageControllerTest do
-  use <%= @project_name_camel_case %>.Web.ConnCase
+defmodule <%= @project_name_camel_case %>Web.PageControllerTest do
+  use <%= @project_name_camel_case %>Web.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

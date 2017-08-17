@@ -1,4 +1,4 @@
-defmodule <%= @project_name_camel_case %>.Web.ChannelCase do
+defmodule <%= @project_name_camel_case %>Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule <%= @project_name_camel_case %>.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint <%= @project_name_camel_case %>.Web.Endpoint
+      @endpoint <%= @project_name_camel_case %>Web.Endpoint
     end
   end
 
